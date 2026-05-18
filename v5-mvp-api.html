@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V5 MVP Organization API Report</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --panel: #fffdf8;
+      --ink: #1f2933;
+      --muted: #52606d;
+      --line: #d9d2c3;
+      --accent: #9f3a2f;
+      --accent-soft: #f8e2dd;
+      --code: #f0ece3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #efe7da 0%, var(--bg) 24%, #f8f5ef 100%);
+      color: var(--ink);
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 14px 40px rgba(31, 41, 51, 0.08);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: #fcf5f1;
+      border-radius: 10px;
+    }
+
+    .section {
+      margin-top: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 32px rgba(31, 41, 51, 0.05);
+    }
+
+    .endpoint {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fffefa;
+    }
+
+    .endpoint + .endpoint {
+      margin-top: 16px;
+    }
+
+    .method {
+      display: inline-block;
+      min-width: 58px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    .url {
+      margin-top: 12px;
+      font-family: Consolas, "Courier New", monospace;
+      background: var(--code);
+      padding: 10px 12px;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #102a43;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f6f1e7;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: var(--code);
+      padding: 1px 5px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 18px 12px 40px;
+      }
+
+      .hero, .section {
+        padding: 18px;
+        border-radius: 16px;
+      }
+
+      th, td {
+        padding: 8px 9px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>V5 MVP Organization API Report</h1>
+      <p>Endpoint inventory for controllers under <code>src/main/java/hsds/adminapi/organization</code>.</p>
+      <div class="meta">
+        <span class="pill">Controllers: 6</span>
+        <span class="pill">Endpoints: 14</span>
+        <span class="pill">Generated: 2026-05-18</span>
+      </div>
+      <div class="note">
+        <p><strong>Scope:</strong> URLs are built from class-level <code>@RequestMapping</code> plus method-level mapping annotations. Framework-injected parameters such as <code>HttpServletRequest</code> are excluded from the input parameter lists because they are not caller-supplied API inputs.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>OrgDetailsController</h2>
+      <p class="small">Class mapping: <code>/api/manage-organization</code></p>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/manage-organization/get-org-types</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td colspan="3">No caller-supplied input parameters</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/manage-organization/get-organizations</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td colspan="3">No caller-supplied input parameters</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/manage-organization/get-org-details/{orgId}</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/manage-organization/get-currencies</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td colspan="3">No caller-supplied input parameters</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">PUT</span>
+        <div class="url">/api/manage-organization/update-org/{orgId}</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td></tr>
+          <tr><td>req.name</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.type</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.currency</td><td>Request Body</td><td>String</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">DELETE</span>
+        <div class="url">/api/manage-organization/delete-org/{orgId}</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>PmsConnectController</h2>
+      <p class="small">Class mapping: <code>/api/organization/pms-connect</code></p>
+
+      <article class="endpoint">
+        <span class="method">PUT</span>
+        <div class="url">/api/organization/pms-connect/configure/{hotelCode}</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>hotelCode</td><td>Path</td><td>String</td></tr>
+          <tr><td>req.interfaceType</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.accessToken</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.hotelTimeZone</td><td>Request Body</td><td>String</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/organization/pms-connect/initialize-jobs/{hotelCode}</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>hotelCode</td><td>Path</td><td>String</td></tr>
+          <tr><td>req.interfaceType</td><td>Request Body</td><td>String</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>PropertiesController</h2>
+      <p class="small">Class mapping: <code>/api/manage-properties</code></p>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/manage-properties/get-properties/{orgId}</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>SignUpController</h2>
+      <p class="small">Class mapping: <code>/api/organization/sign-up</code></p>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/organization/sign-up/check-email-exists</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>email</td><td>Query</td><td>String</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/organization/sign-up/create-user</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>req.email</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.password</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.firstName</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.lastName</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.department</td><td>Request Body</td><td>String</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/organization/sign-up/create-organization-with-user</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>req.name</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.currency</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.orgTypeCode</td><td>Request Body</td><td>String</td></tr>
+          <tr><td>req.userId</td><td>Request Body</td><td>int</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>UsersAccessController</h2>
+      <p class="small">Class mapping: <code>/api/organization/users-access</code></p>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/organization/users-access/get-user-access</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>orgId</td><td>Query</td><td>String</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>UsersMgmtController</h2>
+      <p class="small">Class mapping: <code>/api/organization/manage-users</code></p>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/organization/manage-users/get-user-departments</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td colspan="3">No caller-supplied input parameters</td></tr>
+        </table>
+      </article>
+
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/organization/manage-users/get-org-users</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th></tr>
+          <tr><td>orgId</td><td>Query</td><td>String</td></tr>
+        </table>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
