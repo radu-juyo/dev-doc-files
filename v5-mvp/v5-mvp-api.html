@@ -183,8 +183,8 @@
     <section class="hero">
       <div class="meta">
         <span class="pill">Controllers: 5</span>
-        <span class="pill">Endpoints: 23</span>
-        <span class="pill">Generated: 2026-05-22</span>
+        <span class="pill">Endpoints: 28</span>
+        <span class="pill">Generated: 2026-05-27</span>
       </div>
     </section>
 
@@ -284,6 +284,53 @@
           <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
         </table>
       </article>
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/manage-properties</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+          <tr><td>req</td><td>Request Body</td><td>AddPropertyReq</td><td>JSON body parameter.<div class="json-block"><pre>{
+  &quot;name&quot;: &quot;String&quot;,
+  &quot;city&quot;: &quot;String&quot;,
+  &quot;countryCode&quot;: &quot;String&quot;,
+  &quot;currency&quot;: &quot;String&quot;,
+  &quot;capacity&quot;: &quot;int&quot;,
+  &quot;timezone&quot;: &quot;String&quot;
+}</pre></div></td></tr>
+        </table>
+      </article>
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/manage-properties</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>hotelCode</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+        </table>
+      </article>
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/manage-properties</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>hotelCode</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>req</td><td>Request Body</td><td>UpdateHotelCapacityReq</td><td>JSON body parameter.<div class="json-block"><pre>{
+  &quot;capacity&quot;: &quot;int&quot;
+}</pre></div></td></tr>
+        </table>
+      </article>
+      <article class="endpoint">
+        <span class="method">POST</span>
+        <div class="url">/api/manage-properties</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>hotelCode</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>req</td><td>Request Body</td><td>UpdateHotelDetailsReq</td><td>JSON body parameter.<div class="json-block"><pre>{
+  &quot;name&quot;: &quot;String&quot;
+}</pre></div></td></tr>
+        </table>
+      </article>
     </section>
     <section class="section">
       <h2>SignUpController</h2>
@@ -292,6 +339,14 @@
       <article class="endpoint">
         <span class="method">GET</span>
         <div class="url">/api/organization/sign-up/check-email-exists</div>
+        <table>
+          <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>email</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+        </table>
+      </article>
+      <article class="endpoint">
+        <span class="method">GET</span>
+        <div class="url">/api/organization/sign-up/check-email-exists-user-id</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
           <tr><td>email</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
@@ -433,6 +488,7 @@
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
           <tr><td>req</td><td>Request Body</td><td>UserCreateInvitedReq</td><td>JSON body parameter.<div class="json-block"><pre>{
+  &quot;senderId&quot;: &quot;int&quot;,
   &quot;email&quot;: &quot;String&quot;,
   &quot;password&quot;: &quot;String&quot;,
   &quot;firstName&quot;: &quot;String&quot;,
