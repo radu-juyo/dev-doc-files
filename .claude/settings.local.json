@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 generate_api_spec.py)"
+      "Bash(python3 generate_api_spec.py)",
+      "Bash(git -C /mnt/d/Projects/Other/github-public-pages add v5-mvp/v5-mvp-api.html)",
+      "Bash(git -C /mnt/d/Projects/Other/github-public-pages commit -m 'Regenerate v5-mvp-api.html - update get-available-properties-invite endpoint *)"
     ]
   }
 }
