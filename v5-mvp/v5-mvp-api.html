@@ -194,10 +194,10 @@
 
       <article class="endpoint">
         <span class="method">GET</span>
-        <div class="url">/api/manage-organization/get-user-access</div>
+        <div class="url">/api/manage-organization/get-user-access/{orgId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
@@ -286,10 +286,10 @@
       </article>
       <article class="endpoint">
         <span class="method">POST</span>
-        <div class="url">/api/manage-properties/add-property</div>
+        <div class="url">/api/manage-properties/add-property/{orgId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
           <tr><td>req</td><td>Request Body</td><td>AddPropertyReq</td><td>JSON body parameter.<div class="json-block"><pre>{
   &quot;name&quot;: &quot;String&quot;,
   &quot;city&quot;: &quot;String&quot;,
@@ -302,11 +302,11 @@
       </article>
       <article class="endpoint">
         <span class="method">POST</span>
-        <div class="url">/api/manage-properties/disconnect-property/{hotelCode}</div>
+        <div class="url">/api/manage-properties/disconnect-property/{orgId}/{hotelCode}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
           <tr><td>hotelCode</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
@@ -394,29 +394,29 @@
       </article>
       <article class="endpoint">
         <span class="method">GET</span>
-        <div class="url">/api/organization/manage-users/get-roles</div>
+        <div class="url">/api/organization/manage-users/get-roles/{orgId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
         <span class="method">GET</span>
-        <div class="url">/api/organization/manage-users/get-available-properties</div>
+        <div class="url">/api/organization/manage-users/get-available-properties/{orgId}/{userId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
-          <tr><td>userId</td><td>Query</td><td>int</td><td>Query string parameter.</td></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>userId</td><td>Path</td><td>int</td><td>Path parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
         <span class="method">POST</span>
-        <div class="url">/api/organization/manage-users/save-access-changes</div>
+        <div class="url">/api/organization/manage-users/save-access-changes/{orgId}/{userId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>userId</td><td>Path</td><td>int</td><td>Path parameter.</td></tr>
           <tr><td>req</td><td>Request Body</td><td>SaveAccessReq</td><td>JSON body parameter.<div class="json-block"><pre>{
-  &quot;userId&quot;: &quot;int&quot;,
-  &quot;orgId&quot;: &quot;String&quot;,
   &quot;role&quot;: &quot;String&quot;,
   &quot;properties&quot;: {
       &quot;hotels&quot;: [
@@ -438,10 +438,10 @@
       </article>
       <article class="endpoint">
         <span class="method">GET</span>
-        <div class="url">/api/organization/manage-users/get-user-profile</div>
+        <div class="url">/api/organization/manage-users/get-user-profile/{userId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>userId</td><td>Query</td><td>int</td><td>Query string parameter.</td></tr>
+          <tr><td>userId</td><td>Path</td><td>int</td><td>Path parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
@@ -459,19 +459,19 @@
       </article>
       <article class="endpoint">
         <span class="method">DELETE</span>
-        <div class="url">/api/organization/manage-users/remove-user</div>
+        <div class="url">/api/organization/manage-users/remove-user/{orgId}/{userId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
-          <tr><td>userId</td><td>Query</td><td>int</td><td>Query string parameter.</td></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>userId</td><td>Path</td><td>int</td><td>Path parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
         <span class="method">GET</span>
-        <div class="url">/api/organization/manage-users/get-org-users</div>
+        <div class="url">/api/organization/manage-users/get-org-users/{orgId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
-          <tr><td>orgId</td><td>Query</td><td>String</td><td>Query string parameter.</td></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
         </table>
       </article>
       <article class="endpoint">
@@ -484,9 +484,10 @@
       </article>
       <article class="endpoint">
         <span class="method">POST</span>
-        <div class="url">/api/organization/manage-users/create-invited-user</div>
+        <div class="url">/api/organization/manage-users/create-invited-user/{orgId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
           <tr><td>req</td><td>Request Body</td><td>UserCreateInvitedReq</td><td>JSON body parameter.<div class="json-block"><pre>{
   &quot;senderId&quot;: &quot;int&quot;,
   &quot;email&quot;: &quot;String&quot;,
@@ -494,7 +495,6 @@
   &quot;firstName&quot;: &quot;String&quot;,
   &quot;lastName&quot;: &quot;String&quot;,
   &quot;department&quot;: &quot;String&quot;,
-  &quot;orgId&quot;: &quot;String&quot;,
   &quot;role&quot;: &quot;String&quot;,
   &quot;properties&quot;: {
       &quot;hotels&quot;: [
@@ -516,12 +516,12 @@
       </article>
       <article class="endpoint">
         <span class="method">POST</span>
-        <div class="url">/api/organization/manage-users/link-invited-user-to-org</div>
+        <div class="url">/api/organization/manage-users/link-invited-user-to-org/{orgId}/{userId}</div>
         <table>
           <tr><th>Input Name</th><th>Source</th><th>Type</th><th>Description</th></tr>
+          <tr><td>orgId</td><td>Path</td><td>String</td><td>Path parameter.</td></tr>
+          <tr><td>userId</td><td>Path</td><td>int</td><td>Path parameter.</td></tr>
           <tr><td>req</td><td>Request Body</td><td>SaveAccessReq</td><td>JSON body parameter.<div class="json-block"><pre>{
-  &quot;userId&quot;: &quot;int&quot;,
-  &quot;orgId&quot;: &quot;String&quot;,
   &quot;role&quot;: &quot;String&quot;,
   &quot;properties&quot;: {
       &quot;hotels&quot;: [
